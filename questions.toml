@@ -1,29 +1,60 @@
 [[questions]]
 question = "Which GAIA subfunction is responsible for cleaning polluted waters"
-answer = "POSEIDON"
+answers = ["POSEIDON"]
 alternatives = ["ARTEMIS", "HADES", "DEMETER"]
+hint = "One subfunction shares the name with the Greek god of the sea."
+explanation = """
+    POSEIDON is the subfunction responsible for cleaning up polluted waters. ARTEMIS is
+    responsible for repopulating the earth with wild animals necessary for a stable
+    ecosystem. DEMETER is responsible for reintroducing diverse flora. HADES is a now
+    destroyed subfunction that acted as a failsafe to restart the terraforming process
+    if GAIA was unable to create a stable ecosystem.
+"""
 
 [[questions]]
 question = "What is the name of a facility where HEPHAESTUS builds new machines"
-answer = "Cauldron"
+answers = ["Cauldron"]
 alternatives = ["Factory", "Shop", "Beastworks"]
 
 [[questions]]
 question = "What is the name of the crystalline resource of high value found in sunken caves"
-answer = "Greenshine"
+answers = ["Greenshine"]
 alternatives = ["Redgleam", "Blueglow", "Silverglint"]
+hint = "Having much of this material may make someone envious."
+explanation = """
+    Greenshine is a rare gem formed from crystalized blaze. It can be found in large 
+    quantities underwater in sunken caverns or else high up on mountain peaks.
+"""
 
 [[questions]]
 question = "Dreadwings are flying combat machines based on which real-world animal"
-answer = "Bats"
+answers = ["Bats"]
 alternatives = ["Vultures", "Crows", "Pterodactyls"]
+hint = "This machine is based on a mammal."
 
 [[questions]]
 question = "What does Aloy recover from Thebes, Ted Faro's bunker under old San Francisco"
-answer = "Omega Clearance"
+answers = ["Omega Clearance"]
 alternatives = ["AETHER", "DEMETER", "POSEIDON"]
+explanation = """
+    DEMETER is found in the greenhouse in the Stand of the Sentinels. AETHER is found 
+    underneath the museum in the Tenakth Memorial Grove. POSEIDON is found in the flooded
+    ruins of Las Vegas, now known as Hidden Ember.
+"""
 
 [[questions]]
 question = "What is the name of the capital settlement of the Tenakth Sky Clan"
-answer = "The Bulwark"
+answers = ["The Bulwark"]
 alternatives = ["Thornmarsh", "Scalding Spear", "The Memorial Grove"]
+hint = "The Sky Clan believes that their capital is impenetrable due to its wall."
+
+[[questions]]
+question = "Which of the following machines is NOT mountable when overridden?"
+answers = ["Burrower", "Tremortusk"]
+alternatives = ["Clawstrider", "Charger", "Sunwing"]
+hint = "One machine is too small to ride and the other is too large to ride."
+explanation = """
+    Overriding a Sunwing allows Aloy to finally quash Regalla's rebellion, which is a 
+    major story beat. Sunwings provide the first and only flying mount in the Horizon 
+    franchise.
+"""
