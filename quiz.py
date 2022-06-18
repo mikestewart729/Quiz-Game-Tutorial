@@ -20,12 +20,15 @@ def prepare_questions(path, num_questions):
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
 
-def get_answers(question, alternatives, num_choices=1):
+def get_answers(question, alternatives, num_choices=1, hint=None):
     """
     Displays question and answer choices to user, and gets valid user answer choice
     """
     print(f"{question}?")
     labeled_alternatives = dict(zip(ascii_lowercase, alternatives))
+    if hint:
+        labeled_alternatives["?"] = "Hint"
+
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 
@@ -33,6 +36,11 @@ def get_answers(question, alternatives, num_choices=1):
         plural_s = "" if num_choices == 1 else f"s (choose {num_choices})"
         answer = input(f"\nChoice{plural_s}? ")
         answers = set(answer.replace(",", " ").split())
+
+        # Handle hints
+        if hint and "?" in answers:
+            print(f"\nHINT: {hint}")
+            continue
 
         # Handle invalid answers
         if len(answers) != num_choices:
@@ -66,7 +74,8 @@ def ask_question(question):
     answers = get_answers(
         question = question["question"],
         alternatives = ordered_alternatives,
-        num_choices = len(correct_answers)
+        num_choices = len(correct_answers),
+        hint = question.get("hint"),
     )
     if set(answers) == set(correct_answers):
         print("⭐ Correct! ⭐")
