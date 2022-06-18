@@ -1,55 +1,24 @@
 # quiz.py
 
+from modulefinder import Module
 import random
+import pathlib
 from string import ascii_lowercase
+try: 
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 
 NUM_QUESTIONS_PER_QUIZ = 5
-QUESTIONS = {
-    "Which GAIA subfunction is responsible for cleaning polluted waters": [
-        "POSEIDON",
-        "ARTEMIS",
-        "DEMETER",
-        "HADES",
-    ],
-    "What is the name of a facility where HEPHAESTUS builds new machines": [
-        "Cauldron",
-        "Factory",
-        "Shop",
-        "Beastworks",
-    ],
-    "What is the name of the crystalline resource of high value found in sunken caves":
-    [
-        "Greenshine",
-        "Redgleam",
-        "Blueglow",
-        "Silverglint",
-    ],
-    "Dreadwings are flying combat machines based on which real-world animal": [
-        "Bats",
-        "Vultures",
-        "Crows",
-        "Pterodactyls",
-    ],
-    "What does Aloy recover from Thebes, Ted Faro's bunker under old San Francisco": [
-        "Omega Clearance",
-        "AETHER",
-        "DEMETER",
-        "POSEIDON",
-    ],
-    "What is the name of the capital settlement of the Tenakth Sky Clan": [
-        "The Bulwark",
-        "Thornmarsh",
-        "Scalding Spear",
-        "The Memorial Grove",
-    ]
-}
+QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
 
-def prepare_questions(questions, num_questions):
+def prepare_questions(path, num_questions):
     """
     Preprocess questions from the QUESTIONS data structure
     """
+    questions = tomllib.loads(path.read_text())["questions"]
     num_questions = min(num_questions, len(questions))
-    return random.sample(list(questions.items()), k=num_questions)
+    return random.sample(questions, k=num_questions)
 
 def get_answer(question, alternatives):
     """
@@ -60,19 +29,22 @@ def get_answer(question, alternatives):
     for label, alternative in labeled_alternatives.items():
         print(f"  {label}) {alternative}")
 
-    while (answer_label := input("\nChoice? ")) not in labeled_alternatives:
+    answer_label = input("\nChoice? ")
+    while answer_label not in labeled_alternatives:
         print(f"Please answer one of {', '.join(labeled_alternatives)}")
+        answer_label = input("\nChoice? ")
 
     return labeled_alternatives[answer_label]
 
-def ask_question(question, alternatives):
+def ask_question(question):
     """
     Ask questions of the user and determine if the answer is correct
     """
-    correct_answer = alternatives[0]
+    correct_answer = question["answer"]
+    alternatives = [question["answer"]] + question["alternatives"]
     ordered_alternatives = random.sample(alternatives, k=len(alternatives))
 
-    answer = get_answer(question, ordered_alternatives)
+    answer = get_answer(question["question"], ordered_alternatives)
     if answer == correct_answer:
         print("⭐ Correct! ⭐")
         return 1
@@ -85,13 +57,13 @@ def run_quiz():
     Run the main quiz loop
     """
     questions = prepare_questions(
-        QUESTIONS, num_questions=NUM_QUESTIONS_PER_QUIZ
+        QUESTIONS_PATH, num_questions=NUM_QUESTIONS_PER_QUIZ
     )
 
     num_correct = 0
-    for num, (question, alternatives) in enumerate(questions, start=1):
+    for num, question in enumerate(questions, start=1):
         print(f"\nQuestion {num}:")
-        num_correct += ask_question(question, alternatives)
+        num_correct += ask_question(question)
 
     print(f"\nYou got {num_correct} correct out of {num} questions")
 
