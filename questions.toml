@@ -1,29 +1,34 @@
 [[questions]]
 question = "Which GAIA subfunction is responsible for cleaning polluted waters"
-answer = "POSEIDON"
+answers = ["POSEIDON"]
 alternatives = ["ARTEMIS", "HADES", "DEMETER"]
 
 [[questions]]
 question = "What is the name of a facility where HEPHAESTUS builds new machines"
-answer = "Cauldron"
+answers = ["Cauldron"]
 alternatives = ["Factory", "Shop", "Beastworks"]
 
 [[questions]]
 question = "What is the name of the crystalline resource of high value found in sunken caves"
-answer = "Greenshine"
+answers = ["Greenshine"]
 alternatives = ["Redgleam", "Blueglow", "Silverglint"]
 
 [[questions]]
 question = "Dreadwings are flying combat machines based on which real-world animal"
-answer = "Bats"
+answers = ["Bats"]
 alternatives = ["Vultures", "Crows", "Pterodactyls"]
 
 [[questions]]
 question = "What does Aloy recover from Thebes, Ted Faro's bunker under old San Francisco"
-answer = "Omega Clearance"
+answers = ["Omega Clearance"]
 alternatives = ["AETHER", "DEMETER", "POSEIDON"]
 
 [[questions]]
 question = "What is the name of the capital settlement of the Tenakth Sky Clan"
-answer = "The Bulwark"
+answers = ["The Bulwark"]
 alternatives = ["Thornmarsh", "Scalding Spear", "The Memorial Grove"]
+
+[[questions]]
+question = "Which of the following machines is NOT mountable when overridden?"
+answers = ["Burrower", "Tremortusk"]
+alternatives = ["Clawstrider", "Charger", "Sunwing"]
