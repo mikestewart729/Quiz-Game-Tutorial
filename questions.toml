@@ -1,4 +1,7 @@
-[[questions]]
+[horizon]
+label = "Horizon: Forbidden West"
+
+[[horizon.questions]]
 question = "Which GAIA subfunction is responsible for cleaning polluted waters"
 answers = ["POSEIDON"]
 alternatives = ["ARTEMIS", "HADES", "DEMETER"]
@@ -11,12 +14,12 @@ explanation = """
     if GAIA was unable to create a stable ecosystem.
 """
 
-[[questions]]
+[[horizon.questions]]
 question = "What is the name of a facility where HEPHAESTUS builds new machines"
 answers = ["Cauldron"]
 alternatives = ["Factory", "Shop", "Beastworks"]
 
-[[questions]]
+[[horizon.questions]]
 question = "What is the name of the crystalline resource of high value found in sunken caves"
 answers = ["Greenshine"]
 alternatives = ["Redgleam", "Blueglow", "Silverglint"]
@@ -26,13 +29,13 @@ explanation = """
     quantities underwater in sunken caverns or else high up on mountain peaks.
 """
 
-[[questions]]
+[[horizon.questions]]
 question = "Dreadwings are flying combat machines based on which real-world animal"
 answers = ["Bats"]
 alternatives = ["Vultures", "Crows", "Pterodactyls"]
 hint = "This machine is based on a mammal."
 
-[[questions]]
+[[horizon.questions]]
 question = "What does Aloy recover from Thebes, Ted Faro's bunker under old San Francisco"
 answers = ["Omega Clearance"]
 alternatives = ["AETHER", "DEMETER", "POSEIDON"]
@@ -42,13 +45,13 @@ explanation = """
     ruins of Las Vegas, now known as Hidden Ember.
 """
 
-[[questions]]
+[[horizon.questions]]
 question = "What is the name of the capital settlement of the Tenakth Sky Clan"
 answers = ["The Bulwark"]
 alternatives = ["Thornmarsh", "Scalding Spear", "The Memorial Grove"]
 hint = "The Sky Clan believes that their capital is impenetrable due to its wall."
 
-[[questions]]
+[[horizon.questions]]
 question = "Which of the following machines is NOT mountable when overridden?"
 answers = ["Burrower", "Tremortusk"]
 alternatives = ["Clawstrider", "Charger", "Sunwing"]
@@ -58,3 +61,75 @@ explanation = """
     major story beat. Sunwings provide the first and only flying mount in the Horizon 
     franchise.
 """
+
+[ring]
+label = "Elden Ring"
+
+[[ring.questions]]
+question = "Which region of the Lands Between waits atop the Grand Lift of Dectus"
+answers = ["Altus Plateau"]
+alternatives = [
+    "Liurnia of the Lakes",
+    "Mountaintops of the Giants",
+    "Consecrated Snowfield",
+    "Crumbling Farum Azula"
+]
+hint = "This autumnal region is home to fierce warriors and dragons."
+explanation = """
+    The Altus Plateau is reached atop the Grand Lift of Dectus. Within the Altus
+    Plateau, the player will also find Mt. Gelmir and Leyndell, the Royal Capital. 
+    Other places of interest include the Windmill Village Dominula and the Shaded 
+    Castle. 
+"""
+
+[[ring.questions]]
+question = "Which Shardbearer is fought in the Caelid Region"
+answers = ["Starscourge Radahn"]
+alternatives = [
+    "Godrick the Grafted",
+    "Mohg, Lord of Blood",
+    "Malenia, Blade of Miquella"
+]
+hint = """
+    This Shardbearer is responsible for freezing the fate of the Carian Royal Family,
+    which is intimately connected to astrology and the motion of celestial bodies.
+"""
+explanation = """
+    Starscourge Radahn, fought in Caelid, is responsible for stopping the motion of the 
+    stars and arresting the fate of the Carian Royal Family. By defeating him, the 
+    Tarnished gains access to the eternal city of Nokron after a meteor crashes into
+    Limgrave. 
+"""
+
+[[ring.questions]]
+question = "What are the names of the founding scholars of glintstone sorcery"
+answers = ["Azur", "Lusat"]
+alternatives = ["Sellen", "Thops", "Rogier"]
+explanation = """
+    Primeval Sorcerer Azur grants the Tarnished the powerful spell Comet Azur, known 
+    for being an easy cheese strategy to melt through bosses. Master Lusat grants the 
+    Tarnished Stars of Ruin, a 12 hit spell with high tracking and high poise damage.
+"""
+
+[[ring.questions]]
+question = "Which material is said to have the power to counteract the Scarlet Rot"
+answers = ["Unalloyed gold"]
+alternatives = ["Untarnished silver", "Untainted bronze", "Unearthly platinum"]
+hint = "This valuable metal is unmixed with any other substance."
+explanation = """
+    Gowry tasks the Tarnished with finding and delivering an unalloyed gold needle to 
+    Millicent. Upon the completion of Millicent's questline, the Tarnished can recover
+    an idealized version of the unalloyed gold needle known as Miquella's needle, which
+    is the only way to reverse inheriting the Frenzied Flame.
+"""
+
+[[ring.questions]]
+question = """The divine tower of East Altus is used to activate two Greatrunes. 
+Which two Greatrunes are activated there"""
+answers = ["Morgott, the Omen King", "Mohg, Lord of Blood"]
+alternatives = [
+    "Godrick the Grafted",
+    "Rykard, Lord of Blasphemy",
+    "Starscourge Radahn"
+]
+hint = "The two Greatrunes belong to Shardbearers who are twin brothers."
