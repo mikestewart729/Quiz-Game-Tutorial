@@ -16,7 +16,16 @@ def prepare_questions(path, num_questions):
     """
     Preprocess questions from the QUESTIONS data structure
     """
-    questions = tomllib.loads(path.read_text())["questions"]
+    topic_info = tomllib.loads(path.read_text())
+    topics = {
+        topic["label"]: topic["questions"] for topic in topic_info.values()
+    }
+    topic_label = get_answers(
+        question="Which topic would you like to be quizzed about?",
+        alternatives=sorted(topics)
+    )[0]
+
+    questions = topics[topic_label]
     num_questions = min(num_questions, len(questions))
     return random.sample(questions, k=num_questions)
 
